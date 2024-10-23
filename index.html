@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        div{ 
+        border: 1px solid white;
+        background-color: darkred;
+        color: yellow;
+        position: absolute;
+
+        }
+    </style>
+    <script src="./game.js"></script>
+</head>
+<body>
+    Game
+</body>
+<script>
+document.body.style.backgroundColor = "gold";
+
+    function showList(list){
+        for (let i = 0; i < list.length; i++){
+            const div = document.createElement("div");
+            let sprite = list[i];
+            div.innerText = sprite.name;
+            div.style.left = sprite.position.x + "rem";
+            div.style.top = sprite.position.y + "rem";
+            if(sprite.kind === "champion"){
+                div.style.backgroundColor = "purple";
+            }
+            document.body.appendChild(div);
+        }
+    }
+    let red = spriteList[0];
+    red.position.x = 5;
+    showList(spriteList)
+</script>
+
+</html>
